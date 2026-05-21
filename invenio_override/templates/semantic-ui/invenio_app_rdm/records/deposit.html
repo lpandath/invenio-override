@@ -9,6 +9,7 @@
   Changes:
     - Added page_description for each deposit state (new upload, new version, edit)
       so the page inner banner shows a subtitle below the title.
+    - Added record deletion and file modification hidden inputs.
 #}
 {%- extends config.BASE_TEMPLATE %}
 {%- if community and community.theme and community.theme.enabled %}
@@ -77,6 +78,16 @@
            type="hidden"
            name="deposits-record-permissions"
            value='{{ permissions | tojson }}'>
+  {%- endif %}
+  {%- if record_deletion %}
+    <input type="hidden"
+           name="deposits-record-deletion"
+           value='{{ record_deletion | tojson }}'>
+  {%- endif %}
+  {%- if file_modification %}
+    <input type="hidden"
+           name="deposits-file-modification"
+           value='{{ file_modification | tojson }}'>
   {%- endif %}
   <div id="deposit-form"></div>
 {%- endblock page_body %}
