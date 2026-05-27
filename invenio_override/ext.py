@@ -57,6 +57,10 @@ class InvenioOverride(object):
 
         @app.context_processor
         def inject_visibility():
+            try:
+                can_view_marc21 = current_identity_can_view()
+            except Exception:
+                can_view_marc21 = False
             can_upload_publications = bool(
                 app.config.get("OVERRIDE_SHOW_PUBLICATIONS_SEARCH")
                 and (
@@ -74,7 +78,7 @@ class InvenioOverride(object):
                 )
             )
             return {
-                "can_view_marc21": current_identity_can_view(),
+                "can_view_marc21": can_view_marc21,
                 "can_upload_publications": can_upload_publications,
                 "can_upload_oer": can_upload_oer,
             }
