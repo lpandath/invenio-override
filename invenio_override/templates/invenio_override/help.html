@@ -1,0 +1,46 @@
+{#
+  Copyright (C) 2020-2026 Graz University of Technology.
+
+  invenio-override is free software; you can redistribute it and/or
+  modify it under the terms of the MIT License; see LICENSE file for more
+  details.
+#}
+{%- extends config.OVERRIDE_BASE_TEMPLATE %}
+{%- set title = _("Help & Support") %}
+{%- set page_description = _("Use the options below to get in touch with our team or learn how to get the most out of the search.") %}
+{%- block page_body %}
+  <div class="ui container rel-mt-3">
+    <div class="dashboard-nav-grid">
+      {%- if config.get('OVERRIDE_SHOW_CONTACT') or config.get('OVERRIDE_FRONTPAGE_RIGHT') %}
+        <a href="#" id="help-page-contact-trigger" class="dashboard-nav-box">
+          <div class="dashboard-nav-box-circle">
+            <i class="envelope outline icon"></i>
+          </div>
+          <div class="dashboard-nav-box-title">{{ _("Contact") }}</div>
+          <div class="dashboard-nav-box-desc">{{ _("Get in touch with our team.") }}</div>
+        </a>
+      {%- endif %}
+      <a href="/help/search" class="dashboard-nav-box">
+        <div class="dashboard-nav-box-circle">
+          <i class="search icon"></i>
+        </div>
+        <div class="dashboard-nav-box-title">{{ _("Search Guide") }}</div>
+        <div class="dashboard-nav-box-desc">{{ _("Learn how to search effectively.") }}</div>
+      </a>
+    </div>
+  </div>
+{%- endblock page_body %}
+{%- block javascript %}
+  {{ super() }}
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var btn = document.getElementById('help-page-contact-trigger');
+    if (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        $('#contact-modal').modal('show');
+      });
+    }
+  });
+  </script>
+{%- endblock javascript %}
