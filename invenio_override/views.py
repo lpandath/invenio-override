@@ -152,6 +152,12 @@ def locked(e) -> str:
     return render_template("invenio_override/423.html")
 
 
+@blueprint.route("/help")
+def help_page():
+    """Render the help page."""
+    return render_template("invenio_override/help.html")
+
+
 @blueprint.route("/communities")
 def communities_frontpage():
     """Render the communities overview page."""
