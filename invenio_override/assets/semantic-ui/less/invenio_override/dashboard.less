@@ -447,6 +447,9 @@
   .row.mobile.only:not(.tablet):has(.right.aligned.column),
 #invenio-search-lom-config.uploads-search-app .row.tablet.only:not(.mobile),
 #invenio-search-lom-config.uploads-search-app
+  .row.mobile.only:not(.tablet):has(.right.aligned.column),
+#invenio-search-marc21-config.uploads-search-app .row.tablet.only:not(.mobile),
+#invenio-search-marc21-config.uploads-search-app
   .row.mobile.only:not(.tablet):has(.right.aligned.column) {
   display: none !important;
 }
@@ -531,15 +534,21 @@
   display: none !important;
 }
 
-/* Col 3 (Sort): hidden in OER uploads — no SharedOrMineFilter so sort is one column earlier */
+/* Col 3 (Sort): hidden in OER and Publications uploads — no SharedOrMineFilter so sort is one column earlier */
 #invenio-search-lom-config.uploads-search-app
+  .row.computer.only
+  > .column:nth-child(3),
+#invenio-search-marc21-config.uploads-search-app
   .row.computer.only
   > .column:nth-child(3) {
   display: none !important;
 }
 
-/* Col 2 (SearchBar) in OER: match RDM search position (after missing 4-wide SharedOrMineFilter) */
+/* Col 2 (SearchBar) in OER and Publications: match RDM search position (after missing 4-wide SharedOrMineFilter) */
 #invenio-search-lom-config.uploads-search-app
+  .row.computer.only
+  > .column:nth-child(2),
+#invenio-search-marc21-config.uploads-search-app
   .row.computer.only
   > .column:nth-child(2) {
   flex: 0 0 auto !important;
