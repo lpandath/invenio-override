@@ -5,24 +5,14 @@
   modify it under the terms of the MIT License; see LICENSE file for more
   details.
 
-  Overrides: invenio_records_lom/uploads.html
-  Changes:
-    - Added mobile action bar with "New upload" button.
-    - Added desktop "New upload" circle button injected via JS into the
-      React search row after render.
+  Extends the lom (OER) uploads dashboard and fills the
+  `dashboard_actions` block with the "New upload" circle button
+  which is wired in via the LOM_UPLOADS_TEMPLATE config.
 #}
-{%- extends config.LOM_BASE_TEMPLATE %}
-{%- set active_dashboard_menu_item = "OER" %}
+{%- extends "invenio_records_lom/uploads.html" %}
 {%- set title = _("Educational Resources") %}
 {%- set page_description = _("Manage and publish your openly licensed educational materials.") %}
-{%- block javascript %}
-  {{ super() }}
-  {{ webpack['invenio-records-lom-user-dashboard.js'] }}
-{%- endblock javascript %}
-{%- block page_body %}
-  {%- block user_dashboard_header %}
-    {% include "invenio_app_rdm/users/header.html" %}
-  {%- endblock user_dashboard_header %}
+{%- block dashboard_actions %}
   <div class="dashboard-mobile-action-bar">
     <a href="/oer/uploads/new" class="upload-new-circle">
       <i class="upload icon"></i>
@@ -31,11 +21,6 @@
       <span class="upload-new-title">{{ _("New upload") }}</span>
       <span class="upload-new-desc">{{ _("Share your educational resources") }}</span>
     </div>
-  </div>
-  <div class="ui container rel-mt-2">
-    <div id="invenio-search-lom-config"
-         class="uploads-search-app"
-         data-invenio-search-config='{{ search_app_lom_user_uploads_config() | tojson }}'></div>
   </div>
   <div id="upload-new-circle-lom"
        class="upload-new-wrap"
@@ -77,4 +62,4 @@
     }, 100);
   })();
   </script>
-{%- endblock page_body %}
+{%- endblock dashboard_actions %}
