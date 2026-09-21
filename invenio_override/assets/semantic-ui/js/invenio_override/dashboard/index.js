@@ -15,6 +15,12 @@ if (container) {
   const canUploadPublications =
     container.dataset.canUploadPublications === "true";
   const canUploadOer = container.dataset.canUploadOer === "true";
+  let extraBoxes = [];
+  try {
+    extraBoxes = JSON.parse(container.dataset.extraBoxes || "[]");
+  } catch (e) {
+    extraBoxes = [];
+  }
   ReactDOM.render(
     <DashboardOverview
       showLom={showLom}
@@ -22,6 +28,7 @@ if (container) {
       showPublications={showPublications}
       canUploadPublications={canUploadPublications}
       canUploadOer={canUploadOer}
+      extraBoxes={extraBoxes}
     />,
     container,
   );

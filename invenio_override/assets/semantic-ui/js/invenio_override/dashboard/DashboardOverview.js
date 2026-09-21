@@ -3,9 +3,9 @@
 // invenio-override is free software; you can redistribute it and/or modify it
 // under the terms of the MIT License; see LICENSE file for more details.
 
-import { i18next } from "@translations/invenio_override/i18next";
 import { Icon } from "semantic-ui-react";
 import React from "react";
+import { i18next } from "@translations/invenio_override/i18next";
 
 const NAV_BOXES = [
   {
@@ -82,8 +82,18 @@ export function DashboardOverview({
   showPublications,
   canUploadPublications,
   canUploadOer,
+  extraBoxes = [],
 }) {
-  const boxes = NAV_BOXES.filter(
+
+  const extra = extraBoxes.map((b) => ({
+    key: b.key,
+    title: () => b.title,
+    description: () => b.description || "",
+    icon: b.icon || "plus",
+    url: b.url,
+    highlight: !!b.highlight,
+  }));
+  const boxes = NAV_BOXES.concat(extra).filter(
     (box) =>
       (!box.lomOnly || showLom) &&
       (!box.curatorOnly || showCurations) &&

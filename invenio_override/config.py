@@ -539,3 +539,6 @@ RATELIMIT_GUEST_USER = "5000 per hour;500 per minute"
 
 SESSION_COOKIE_SAMESITE = "Strict"
 """Sets cookie with the samesite flag to 'Strict' by default."""
+
+OVERRIDE_DASHBOARD_EXTRA_BOXES = []
+"""Extra tiles on the dashboard overview and entries in the Dashboard menu."""

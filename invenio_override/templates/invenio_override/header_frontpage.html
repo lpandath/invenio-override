@@ -82,16 +82,6 @@
         <line class="hline node-pub node-edu" x1="58%" y1="20%" x2="69%" y2="22%" />
         <line class="hline node-pub node-edu" x1="63%" y1="75%" x2="74%" y2="58%" />
       </svg>
-      <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var section = document.querySelector('.frontpage-hero-section');
-    document.querySelectorAll('.frontpage-pillar[data-hero-group]').forEach(function (pillar) {
-      var cls = 'hero-hover-' + pillar.dataset.heroGroup;
-      pillar.addEventListener('mouseenter', function () { section.classList.add(cls); });
-      pillar.addEventListener('mouseleave', function () { section.classList.remove(cls); });
-    });
-  });
-      </script>
       <div class="ui container">
         {%- block frontpage_hero %}{%- endblock frontpage_hero %}
           {%- block frontpage_form %}
