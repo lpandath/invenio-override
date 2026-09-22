@@ -8,6 +8,13 @@
 Changes
 =======
 
+Version v1.2.0 (released 2026-09-22)
+
+- feat(header): render notices
+- fix(frontpage): move js block after extends
+- fix(header): keep pinned header above deposit box
+- fix(i18n): make config-driven labels extractable
+
 Version v1.1.1 (released 2026-09-08)
 
 - fix(i18n): replace fuzzy German guesses and resync translation catalog
