@@ -228,14 +228,13 @@ msgstr "Laden Sie Ihre Forschungsergebnisse, Software, Preprints usw. hoch."
 #: invenio_override/templates/invenio_override/navbar.html:224
 msgid "Increase upload limit beyond our default policy of 10GB."
 msgstr ""
-"Upload-Limit über unsere Standardrichtlinie von 10 GB hinaus "
-"erhöhen.Erhöhen Sie das Upload-Limit über unsere Standardrichtlinie von "
-"10 GB hinaus."
+"Erhöhen Sie das Upload-Limit über unsere Standardrichtlinie von 10 GB "
+"hinaus."
 
 #: invenio_override/templates/invenio_override/contact_us.html:26
 #: invenio_override/templates/invenio_override/navbar.html:225
 msgid "Establish contact with data stewards."
-msgstr "Stellen Sie Kontakt zu Datenverwaltern her."
+msgstr "Stellen Sie Kontakt zu unseren Data Stewards her."
 
 #: invenio_override/templates/invenio_override/contact_us.html:27
 #: invenio_override/templates/invenio_override/navbar.html:226
