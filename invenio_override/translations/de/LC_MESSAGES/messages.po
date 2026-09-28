@@ -380,7 +380,7 @@ msgstr "Forschungsergebnisse"
 #: invenio_override/templates/invenio_override/resource_overview.html:52
 #: invenio_override/templates/invenio_override/search_nav.html:18
 msgid "Educational Resources"
-msgstr "Bildungsressourcen"
+msgstr "Bildungsinhalte"
 
 #: invenio_override/templates/invenio_override/header_frontpage.html:39
 #: invenio_override/templates/invenio_override/search_nav.html:21
@@ -477,7 +477,7 @@ msgstr "Publikation hochladen"
 
 #: invenio_override/templates/invenio_override/navbar.html:152
 msgid "Upload Educational Resource"
-msgstr "Bildungsressource hochladen"
+msgstr "Bildungsinhalt hochladen"
 
 #: invenio_override/templates/invenio_override/navbar.html:156
 msgid "Log in for more features"
