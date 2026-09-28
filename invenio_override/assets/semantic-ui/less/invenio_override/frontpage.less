@@ -670,50 +670,84 @@ h2 {
   z-index: 2000 !important;
 }
 
+.zammad-form-modal-backdrop {
+  background-color: rgba(35, 31, 32, 0.55) !important;
+  opacity: 1 !important;
+}
+
+.zammad-form-modal-body {
+  width: calc(100% - 2rem) !important;
+  max-width: 30rem !important;
+  padding: 1.75rem !important;
+  border-radius: @radiusCardLarge !important;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.22) !important;
+}
+
 .zammad-form {
+  font-family: inherit;
+
+  h1,
   h2 {
+    margin: 0 0 1.25rem;
     text-align: center;
+    color: @primaryText;
+    font-size: @font-size-xl;
+    font-weight: 700;
   }
 
   .form-group {
+    margin-bottom: 1rem;
+
     label {
-      color: black;
+      display: block;
+      margin-bottom: 0.3rem;
+      color: @recordText;
+      font-size: @font-size-sm;
+      font-weight: 600;
     }
 
-    input.form-control {
-      height: 30px;
-      border-radius: @radiusSmall;
-      font-family: "Source Sans Pro";
-      background: @primaryLinkBackgroundInverted;
+    input.form-control,
+    textarea.form-control {
+      padding: 0.6em 0.8em;
+      font-family: inherit;
+      font-size: @font-size-sm;
+      color: @primaryText;
+      background: @primaryBackground;
       border: 1px solid rgba(34, 36, 38, 0.15);
+      border-radius: @radiusSmall;
+      transition:
+        border-color @transitionFast ease,
+        box-shadow @transitionFast ease;
+
+      &:focus {
+        outline: none;
+        border-color: @overridePrimary;
+        box-shadow: 0 0 0 3px fade(@overridePrimary, 15%);
+      }
     }
 
-    textarea {
-      border: 1px solid rgba(34, 36, 38, 0.15);
-      border-radius: @radiusSmall;
+    textarea.form-control {
+      min-height: 7rem;
+      resize: vertical;
     }
   }
 
   .btn {
-    width: 100% !important;
-    cursor: pointer;
-    font-family: "Source Sans Pro";
-    min-height: 1em;
-    line-height: 1em;
-    padding: 0.78571429em 1.5em 0.78571429em;
-    background: @greyLight none;
-    border: 0;
-    border-radius: @radiusSmall;
-    transition:
-      background-color @transitionFast ease,
-      color @transitionFast ease;
-  }
-
-  .btn:hover {
-    background: @primaryLinkHoverBackground;
-    color: @primaryButton;
+    width: 100%;
+    padding: 0.7em 1.25em;
     font-size: @font-size-base;
-    font-weight: bold;
+    font-weight: 600;
+    color: #ffffff;
+    background: @overridePrimary;
+    border: 0;
+    border-radius: @radiusPill;
+    cursor: pointer;
+    transition: background-color @transitionFast ease;
+
+    &:hover {
+      background: @overrideSecondary;
+      color: #ffffff;
+    }
   }
 }
 
