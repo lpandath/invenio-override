@@ -16,6 +16,22 @@ const NAV_BOXES = [
     url: "/me/uploads",
   },
   {
+    key: "publications",
+    title: () => i18next.t("Publications"),
+    description: () => i18next.t("Browse and search publications"),
+    icon: "book",
+    url: "/publications/search",
+    marc21Only: true,
+  },
+  {
+    key: "educational-resources",
+    title: () => i18next.t("Educational Resources"),
+    description: () => i18next.t("Your openly licensed educational materials"),
+    icon: "graduation cap",
+    url: "/oer/uploads",
+    lomOnly: true,
+  },
+  {
     key: "requests",
     title: () => i18next.t("Requests"),
     description: () =>
@@ -32,20 +48,13 @@ const NAV_BOXES = [
     curatorOnly: true,
   },
   {
-    key: "publications",
-    title: () => i18next.t("Publications"),
-    description: () => i18next.t("Browse and search publications"),
-    icon: "book",
-    url: "/publications/search",
-    marc21Only: true,
-  },
-  {
-    key: "educational-resources",
-    title: () => i18next.t("Educational Resources"),
-    description: () => i18next.t("Your openly licensed educational materials"),
-    icon: "graduation cap",
-    url: "/oer/uploads",
-    lomOnly: true,
+    key: "upload-dataset",
+    title: () => i18next.t("Upload Research Result"),
+    description: () =>
+      i18next.t("Deposit research data, software, preprints and more"),
+    icon: "database",
+    url: "/uploads/new",
+    highlight: true,
   },
   {
     key: "upload-publication",
@@ -63,15 +72,6 @@ const NAV_BOXES = [
     icon: "graduation cap",
     url: "/oer/uploads/new",
     lomUploadOnly: true,
-    highlight: true,
-  },
-  {
-    key: "upload-dataset",
-    title: () => i18next.t("Upload Research Result"),
-    description: () =>
-      i18next.t("Deposit research data, software, preprints and more"),
-    icon: "database",
-    url: "/uploads/new",
     highlight: true,
   },
 ];
