@@ -225,6 +225,9 @@
         <li>{{ _("Establish contact with data stewards.") }}</li>
         <li>{{ _("Find individual solutions.") }}</li>
       </ul>
+      {%- if config.OVERRIDE_CONTACT_FORM and config.OVERRIDE_CONTACT_FORM_BUNDLE %}
+        {{ webpack[config.OVERRIDE_CONTACT_FORM_BUNDLE] }}
+      {%- endif %}
       {%- if config.OVERRIDE_CONTACT_FORM %}
         <div style="margin-top: 1em;">
           <a id="feedback-form" class="ui primary button">{{ _("Contact us") }}</a>
